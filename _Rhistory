@@ -1,0 +1,49 @@
+mtcars <- mtcars
+library(dplyr)
+library(dplyr)
+mutate_if?
+?mutate_if
+View(mtcars)
+test <- mtcars %>%
+mutate_if(cyl == 6, comment = "6 Cylinder" )
+test <- mtcars %>%
+mutate_if(cyl == 6, comment = "6 Cylinder" )
+View(mtcars)
+test <- mtcars %>%
+mutate_if(mtcars$cyl == 6, comment = "6 Cylinder" )
+test <- mtcars %>%
+mutate_if(mtcars$cyl == 6, comment = "6 Cylinder" )
+test <- mtcars %>%
+mutate_if(cyl == 6, comment = "6 Cylinder" )
+if(x == "6") { return(y = hi)}
+comment6 <- function(x){
+if(x == "6") { return(y = hi)}
+}
+test <- lapply(mtcars$cyl, comment6)
+comment6 <- function(x){
+if(x == "6") { return(y = "hi")}
+}
+test <- lapply(mtcars$cyl, comment6)
+View(test)
+data <- read.csv("activity.csv")
+View(data)
+data <- read.csv("activity.csv", na.rm = T)
+data <- read.csv("activity.csv", na.rm = TRUE)
+library(dplyr)
+library(dplyr, ggplot2)
+library(ggplot2)
+library(dplyr, ggplot2, readr)
+data <- read_csv("activity.csv", na.rm = TRUE)
+library(readr)
+library(ggplot2)
+data <- read_csv("activity.csv", na.rm = TRUE)
+data <- read_csv("activity.csv", na = FALSE)
+View(data)
+data <- read_csv("activity.csv", guess_max = 1000, na = FALSE)
+View(data)
+data <- read.csv("activity.csv")
+View(data)
+steps_by_day <- aggregate(steps ~ date, data, sum)
+hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="green",xlab="Number of Steps")
+hist(steps_by_day$steps, main = paste("Total Steps Each Day"),xlab="Number of Steps")
+mean(steps_by_day$steps)

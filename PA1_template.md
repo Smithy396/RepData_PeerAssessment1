@@ -177,5 +177,32 @@ I can see that the NA's have slightly increased the median value. However the me
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
+```r
+# Use dplyrs mutate to add a dayofweek and weekday column
+datawithmean <- datawithmean %>% mutate(dayofweek = weekdays(as.Date(date))) %>%
+  mutate(isweekday = if_else(dayofweek == "Saturday" | dayofweek == "Sunday", "Weekend", "Weekday"))
+
+# Create a data frame of the mean and median number of steps across all days
+actInterval2 <- datawithmean %>% dplyr::group_by(interval, isweekday) %>% summarise(meanSteps = mean(steps, na.rm = TRUE))
+
+# Generate time series plot of the intervals vs steps taken
+IntervalPlot2 <- ggplot(
+                      data = actInterval2, 
+                      mapping = aes(x = interval, y = meanSteps)) + 
+                      geom_line() + 
+                      facet_wrap(~isweekday, ncol = 1) +
+                      scale_x_continuous("Day Interval",
+                      breaks = seq(min(actInterval$interval), 
+                                   max(actInterval$interval), 100)) +
+                      scale_y_continuous("Average Number of Steps") + 
+                      ggtitle("Average Number of Steps Taken by Interval"
+                      )
+
+IntervalPlot2
+```
+
+![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+
+
 
 
